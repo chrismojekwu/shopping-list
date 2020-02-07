@@ -1,19 +1,21 @@
+"use strict";
 
-
-
+ 
 $('li').on('click','.shopping-item-toggle', e => {
+    const listItem = $(event.currentTarget).find('.shopping-item')
+    $(listItem).toggleClass('shopping-item__checked')
     
-    //toggle this shopping list item name
-     $('span.shopping-item').toggleClass('shopping-item__checked');
-
-       console.log("check button")
+       console.log("item check")
 });
 
 
-$('ul>li').on('click','.shopping-item-delete', e => {
+
+
+$('li').on('click','.shopping-item-delete', e => {
+    const listBox = $(event.currentTarget).closest('li');
+     $(listBox).empty()
     
-    //delete this li item 
-    console.log("delete button")
+    console.log("item deleted")
 });
 
 $('form>button').on('click', e => {
@@ -38,7 +40,7 @@ $('form>button').on('click', e => {
 });
 
 $(document).ready( function() {
-    $(document).on('submit', '#js-shopping-list-form', function(){
+    $(document).on('submit', '#js-shopping-list-form',function(){
         return false;
     })
 })
