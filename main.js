@@ -14,6 +14,7 @@ $('li').on('click','.shopping-item-toggle', e => {
 $('li').on('click','.shopping-item-delete', e => {
     const listBox = $(event.currentTarget).closest('li');
      $(listBox).empty()
+     $(event.currentTarget).css("display","none");
     
     console.log("item deleted")
 });
